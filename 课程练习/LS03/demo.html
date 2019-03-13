@@ -51,5 +51,39 @@
     //String.prototype.substring(start,end?);
     //String.prototype.split(separator?,limit?);
 
+
+    // 字符串常用方法
+    var str = "abncxzbjkld"
+
+    //slice
+    str.slice(2,-2);
+    str.slice(-2,2);    // ""
+
+    //split     返回数组
+    str.split("x");
+    str.split("b",1);   //规定返回的数组元素个数
+    str.split("b",0);   //[]
+    str.split("");      //["a", "b", "n", "c", "x", "z", "j", "k", "l", "d"]
+
+
+    //charAt
+    str.charAt(6);
+    str.charAt();   //默认为0
+
+    //indexOf
+    str.indexOf("abc"); //-1
+    str.indexOf("ab",6);    //查找起始位置
+
+
+    //substr 与substring的区别
+    var sp = "nxcmvznm,wefpij";
+    sp.substr(0,3);     //起始位置，截取长度
+    sp.substring(2,4);  //起始位置，截止位置（不包含）
+
+
+    var sk = "dsm,".concat("lll");  //拼接
+    var st0 = " abce de  \r \n".trim();     //去除两头的所有空格，包含\t \n
+
+    "abcDEFabcDEFabcDEF".lastIndexOf("D");  //从后向前第一个出现目标的下标
 </script>
 </html>
