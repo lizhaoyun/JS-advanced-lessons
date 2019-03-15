@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var a = [1,2,3];
+    var b = a;
+    console.log(a,b);
+    b.pop();
+    console.log(a,b);   //  a=b
+    b = [4,5,6];
+    console.log(a,b);   //a:[1,2]   b:[4,5,6]
+
+
+    //原始参数（比如一个具体的数字）被作为值传递给函数；值被传递给函数，如果被调用函数改变了这个参数的值，这样的改变不会影响到全局或调用函数。
+    //如果你传递一个对象（即一个非原始值，例如Array或用户自定义的对象）作为参数，而函数改变了这个对象的属性，这样的改变对函数外部是可见的
+ //?   Part2         
+    function foo(x) {
+        x.push(4);
+        x = [5,6,7];
+        x.push(8);
+        console.log(x);
+    }
+    var a = [1,2,3];
+    foo(a);
+    console.log(a);
+
+    //Part3
+    function foo(x) {
+        x.push(4);
+        console.log(x);
+        x.length = 0;
+        console.log(x);
+        x.push(5,6,7,8);
+        console.log(x);
+    }
+    var a = [1,2,3];
+    foo(a);
+    console.log(a);
+
+
+    obj = {x:"li"};// ={x:"li"} 对象初始化表达式
+    arr = [1,2];// =[1,2]为数组初始化表达式
+
+
+    function foo(){
+        var a=b=3;          //赋值的变量若定义未出现在函数中，则为全局变量
+        console.log(a); //3
+    }
+    foo();
+    console.log("b:",b);//3     全局变量
+    console.log("a:",a);//报错    局部变量
+
+    
+    //  ES5 中没有块作用域      -->     除函数外，{}部分为全局变量
+
+    if(false){
+        var b = 30;
+    }
+    console.log(b);     //  undefined
+
+    //undeclared可以被看作是一种语法错误
+    //"variable age is undeclared"可以被理解成两种情况:
+    //1.既没有声明变量也没有赋值
+    //2.没有声明变量但赋值了:隐式转换成全局变量
+
+    function  sloppyFunc() {
+    sloppyVar = 123;
+}
+sloppyFunc();
+console.log(sloppyVar);
+
+</script>
+</html>
