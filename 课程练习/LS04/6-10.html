@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document 6-10</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //严格模式注意事项:
+    //1.必须用var关键字定义变量。
+    //2.不能给不可写属性、只读属性、不可扩展对象的新属性赋值
+    //3。删除不可删除的属性时报错，如：prototype
+    //4.函数参数名不可重复
+    //5.进制八进制
+    
+
+    //switch
+    //switch 语句在比较值时使用全等（===）操作符,因此不会发生类型转换
+    //case 为判断条件时，switch条件应为布尔类型
+    var i = "1";
+    switch(i){
+        case 1:
+            console.log("case 1 Number");
+            break;
+        default:
+            console.log("default");
+    }
+    //输出default 而不是 case 1 Number
+
+    var i = 65;
+    switch(new Boolean(true)){
+        case i>=60:
+            alert('及格');
+            break;
+        case i<60:
+            alert('不及格');
+            break;
+        default:
+            alert('default');
+    }   //default
+
+
+    //for...in
+
+    //遍历数组          跳过数组中空白项
+    var arr = [1,2,3,,5,6,,9];
+    for(var i in arr){
+        console.log(arr[i]);
+    }
+
+    //遍历对象  常用
+    var obj={x:10,y:20,z:"6",p:""};
+    for(var i in obj){
+        console.log(i,obj[i],typeof obj[i]);
+    }
+</script>
+</html>

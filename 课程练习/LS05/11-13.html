@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document11-13</title>
+</head>
+<body></body>
+<script>
+    console.log("10"-"3");  //7
+    console.log("10"+true); //10true
+    console.log("10"-true); //9         减法默认转为number
+    //++转为数字类型
+    //+= 据情况而定：
+    var x = "1";
+    console.log(x+=1);
+    var x = 1;
+    console.log(x+=1);
+
+    var i=1;
+    var y = ++i + ++i + ++i;
+    console.log(y); //9
+
+
+
+    var obj1 = new String("xyz");
+    var obj2 = new String("xyz");
+    //均为false
+    console.log("xyz"===obj1);
+    console.log(obj1 == obj2);
+    console.log(obj1 === obj2);
+    console.log(obj1 == new String("xyz"));
+
+
+    
+    //string，数字、布尔值、null和underfined属于不可变类型，不能改变他们
+    console.log(2 == new Number(2));    //true
+
+    var obj1 = {x:2,y:[1],z:false};
+    var obj2 = {x:2,y:[1],z:new Boolean(false)};
+    //var obj2 = {x:2,y:[1],z:Boolean(new Boolean(false))};     false
+    console.log(obj1.z == obj2.z);  //true
+
+</script>
+</html>
