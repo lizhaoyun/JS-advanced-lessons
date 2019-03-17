@@ -7,4 +7,42 @@
 <body>
     
 </body>
+<script>
+    //显示出的均为原始式子(运算结果)。若原始式子为判断条件，则显示结果
+    // &&   左真显右，左假显左
+    // ||   左真显左，左假显右
+
+    console.log(2>1&&4);    //4
+    console.log(false&&("2" == 2)); //false
+    console.log(2&&4);  //4
+    console.log(0&&4);  //0
+    console.log({}&&"world");   //world     所有对象转换为布尔类型 都为 true
+
+
+    console.log(2>1||4<5);  //true
+    console.log(false||("2" == 2)); //true
+    console.log(false||2);  //2
+    console.log(2||4);  //2
+    console.log(0||4);  //4
+
+
+
+    //所有对象转换为布尔类型 都为 true
+    console.log((new Boolean(false))&&234); //234
+    console.log((new Boolean(false))||234); //Boolean {false}
+
+
+
+    var sum = function(a,b,c){
+        if((b!=false)&&(b=b||4));   //b==false
+        if((c!=false)&&(c=c||5));
+        console.log(b); 
+        console.log(c);
+        return a+b+c;
+    };
+    console.log(sum(1,0,0));
+
+
+
+</script>
 </html>
