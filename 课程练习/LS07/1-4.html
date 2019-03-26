@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var x = 45;
+    var test = function(){
+        console.log("输出：",this.x);
+    }
+    var obj = {
+        x:23
+    };
+    obj.test = test;
+    obj.test();// obj.x  23
+    test();//  window.x 45
+
+
+    var x = 45;
+    var obj = {
+        x:23,
+        test:function(){
+            function foo(){
+                console.log(this.x);
+            }
+            foo();
+        }
+    };
+    obj.test();     // 45
+</script>
+</html>
