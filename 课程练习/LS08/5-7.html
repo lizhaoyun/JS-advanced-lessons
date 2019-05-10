@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document 5-7</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function foo(){}
+    console.log(foo); //
+    console.log(typeof foo); // function
+    console.log(foo instanceof Object); // true
+    console.log(foo instanceof Function); //  true
+    console.log(foo === window.foo); // true
+
+
+    //object
+    console.log(typeof Math);	
+    console.log(typeof JSON);	 
+
+    //function
+    console.log(typeof Function);
+    console.log(typeof Array);	 
+    console.log(typeof Date);	 
+    console.log(typeof Error);
+
+
+//------------------intanceof--------------------------------
+    //用法：Left instanceof Right
+    //原理：判断L内部隐藏的__proto__属性（如果L.__proto__.__proto__不为空，则沿着原型链一直使用__proto__进行查找比较）是否和构造函数R的prototype相等。
+    //1、只有函数有天然的prototype属性
+    //2、所有对象都有隐藏的__proto__属性，在js中函数也是对象，因此函数也有__proto__
+    //所有函数的_proto_指向的都是Function.prototype（包括Function._proto_）,而Function.prototype._proto_指向的是Object的prototype
+   
+    //true
+    console.log(Function instanceof Function);
+    console.log(Function instanceof Object);
+
+    console.log(Array instanceof Function);
+    console.log(Array instanceof Object);
+
+    console.log(Date instanceof Function);
+    console.log(Date instanceof Object);
+
+    console.log(Math instanceof Function);
+    console.log(Math instanceof Object);
+
+    console.log(JSON instanceof Function);
+    console.log(JSON instanceof Object);
+
+    //函数对象属性之arguments 实参集合（类似数组的一个对象）
+    var foo = function (a,b){
+    console.log(arguments);//类似数组的一个对象
+    //arguments 是Symbol类型，独一无二的，具体参见后续ES6部分
+    console.log(arguments === test.arguments);
+
+    console.log(arguments.length);
+    var args = Array.prototype.splice.call(arguments,0);
+    console.log(args);
+    };
+    foo(1,2,3,4);
+</script>
+</html>
