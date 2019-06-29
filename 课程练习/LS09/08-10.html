@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+//--------------------------08-------------------------------------------
+    console.log(a,b);//undefined undefined
+    var b = 23;
+    console.log(a,b);//undefined 23
+    var a = b;
+    console.log(a,b);//23 23
+
+    console.log(obj1,obj2);//undefined undefined
+    var obj1 = {x:23};
+    console.log(obj1,obj2);//{x:23} undefined
+    var obj2 = obj1;
+    console.log(obj1,obj2);//{x:23} {x:23}
+    obj2.x =25;
+    console.log(obj1,obj2);//{x:25} {x:25}
+
+
+    //函数优先级高于变量
+    //声明提升时，函数在最上
+
+    //函数与变量同名时会出现覆盖
+    function AA(){
+        console.log("AA_1");
+    }
+    var AA;
+
+    AA();
+    AA = function AA(){
+        console.log("AA_2");
+    };
+    AA();
+
+
+
+</script>
+</html>
